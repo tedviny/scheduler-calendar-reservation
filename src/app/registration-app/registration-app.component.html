@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <div class="p-2">
+  <a class="navbar-brand" class="text-light" [routerLink]="['/scheduler']">{{ title }}</a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto p-2">
+      <li class="nav-item active">
+        <a class="nav-link text-light" [routerLink]="['/scheduler']">Home <span class="sr-only"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<section class="p-4">
+  <div class="card p-2">
+    <h6 class="text-center text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cupiditate voluptatum sed. Enim nihil doloremque, possimus unde ducimus repudiandae iusto !</h6>
+  </div>
+</section>
+
+<section>
+    <div class="card">
+<div  class="container-fluid p-3 form-section">
+    <div class="bg-secondary p-1">
+    <h5 class="text-center text-light">Informations de la réservation</h5>
+    </div>
+    <div class="pt-3">
+<form [formGroup]="registerForm">
+    <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group" >
+        <label for="email">Email: </label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+    </div>
+    <div class="pt-3">
+    <button class="btn btn-primary form-control" type="submit" (click)="onSubmit()">Reservez</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section class="p-5">
+<div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minima natus debitis omnis voluptas praesentium quam illo nulla commodi ipsa itaque deserunt iure cumque atque laudantium, id quia fugiat dignissimos?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem nam obcaecati a perferendis hic, delectus veritatis cupiditate similique facilis, illo aliquid possimus recusandae adipisci, sed porro? Voluptatum, consequatur provident?
+  </p>
+</div>
+</section>
+ <!-- footer -->
+ <nav class="navbar navbar-light bg-secondary">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+          <!---->
+      </div>
+      <div class="col">
+          <!---->
+      </div>
+      </div>
+      <div class="container">
+      <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-center"><a class="text-light" href="#">&copy;Ted Viny 2022</a></div>
+          <div class="col-md-4"></div>
+      </div>
+      </div>
+      </div>
+</nav>
+
