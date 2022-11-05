@@ -12,11 +12,6 @@ const routes: Routes = [
     {
         path: 'registration',
         component: RegistrationAppComponent
-    },
-    {
-        path: '',
-        redirectTo: 'scheduler',
-        pathMatch: 'full'
     }
 ]
 
