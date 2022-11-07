@@ -16,7 +16,7 @@ import { SchedulerModule } from 'angular-calendar-scheduler';
 import { AppService } from './services/app.service';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { HttpClientModule } from '@angular/common/http'
 import moment from 'moment';
 import { RegistrationAppComponent } from './registration-app/registration-app.component';
 import { SchedulerAppComponent } from './scheduler-app/scheduler-app.component';
@@ -40,7 +40,8 @@ import { AppRoutingModule } from './app-routing.modules';
       useFactory: adapterFactory
     }),
     SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange', logEnabled: true }),
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [
     AppService,

@@ -1,10 +1,10 @@
-# Scheduler calendar reservation project
-Time scale reservations using Angular.
+# Scheduler calendar reservation project client
+Time scale reservations using Angular **14.2.0**.
 This project allows user to take one time scale in calendar, after that the time scale choosen will be disabled in calendar.
 ### For use the project:
 - Download the project.
 - Run the server in app directory of project with command : `ng serve`
-- Open web browser on: `localhost:4200/`
+- Open web browser in url: `localhost:4200/`
 - Reserve time scale and add user informations.
 
 ### This project use Angular localstorage.

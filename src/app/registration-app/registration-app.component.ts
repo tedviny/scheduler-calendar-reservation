@@ -3,12 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Register } from './models/register';
 import { AppService } from '../services/app.service';
-import {
-  CalendarSchedulerEvent,
-  CalendarSchedulerEventStatus,
-  CalendarSchedulerEventAction
-} from 'angular-calendar-scheduler';
-
 
 @Component({
   selector: 'app-registration-app',
@@ -27,6 +21,10 @@ export class RegistrationAppComponent implements OnInit {
   public eventsServices = [];
 
   registering: any;
+  @Input() dep: any;
+  Name: string;
+  Email: string;
+  TimeSlot: string;
 
   constructor(private router?: Router, private route?: ActivatedRoute, private formBuilder?: FormBuilder, private servicedata?: AppService) { }
   data: any;
@@ -43,12 +41,8 @@ export class RegistrationAppComponent implements OnInit {
 
     });
   }
-
+  // Function to send data of formular to database 
   onSubmit() {
-    console.log(this.registerForm.value);
-    console.log(this.router.url);
-
-
     //Date getting traitement
     const str = this.router.url;
     const timeslot = str.slice(
@@ -62,18 +56,19 @@ export class RegistrationAppComponent implements OnInit {
     // Create new object reservation
     this.model = new Register(this.registerForm.value.name, this.registerForm.value.email, timeslot, "false");
     console.log(this.model);
+    // Send data of reservation in server side for database storage
+    var val = {
+      Name: this.registerForm.value.name,
+      Email: this.registerForm.value.email,
+      TimeSlot: timeslot
+    }
+    this.servicedata.addReservation(val).subscribe(res => {
+      alert(res.toString());
+    });
+    this.servicedata.addTimeSlot(val).subscribe(res => {
+    });
+    this.registerForm.reset();
 
-
-  }
-
-  addOneHourTodate(date: Date, hour: number): Date {
-    hour = 1;
-    return new Date(new Date(date).setHours(date.getHours() + hour));
-
-  }
-
-  addNewRegistering(item: CalendarSchedulerEvent) {
-    const actions: CalendarSchedulerEventAction[] = []
   }
 
 }
