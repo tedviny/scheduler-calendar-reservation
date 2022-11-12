@@ -17,14 +17,14 @@ export class AppService {
 
     // Reservations getting in database
     getReservation(): Observable<any[]> {
-        return this.http.get<any[]>(this.APIurl + '/client_reserv/reservation/')
+        return this.http.get<any[]>(this.APIurl + '/client/reservation/')
     }
     // Reservations adding in database
     addReservation(val: any) {
-        return this.http.post(this.APIurl + '/client_reserv/reservation/', val)
+        return this.http.post(this.APIurl + '/client/reservation/', val)
     }
     addTimeSlot(val: any) {
-        return this.http.post(this.APIurl + '/client_reserv/timeslot/', val)
+        return this.http.post(this.APIurl + '/client/timeslot/', val)
     }
 
     // Saving and getting timeslot in localstorage database
