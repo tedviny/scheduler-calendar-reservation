@@ -9,3 +9,8 @@ This project allows user to take one time scale in calendar, after that the time
 
 ### This project use Angular localstorage.
 The local storage can be cleared with command `localStorage.clear();` on console of web browser.
+
+# Requests
+
+# Tests
+## Units tests
